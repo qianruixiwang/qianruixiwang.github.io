@@ -4,5 +4,13 @@ description: Bookmark this to keep an eye on my project updates!
 
 header_pages:
   - about.md
+  - experience.md
+  - education.md
+  - skills.md
   - projects.md
-  - cv.md
+  - contact.md
+
+minima:
+  social_links:
+    - platform: github
+      user_url: https://github.com/qianruixiwang
