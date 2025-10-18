@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Qianruixi Wang — Portfolio</title>
+  <style>
+    :root{
+      --bg:#0e1116;--panel:#171b22;--ink:#e6e8eb;--muted:#98a2b3;--accent:#7aa2ff;
+      --max:980px;--r:18px
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(8px);background:#0e1116cc;border-bottom:1px solid #232a33;z-index:10}
+    nav{max-width:var(--max);margin:auto;display:flex;gap:16px;align-items:center;padding:10px 16px}
+    nav .brand{font-weight:700;margin-right:auto}
+    nav a{padding:8px 10px;border-radius:10px} nav a:hover{background:#1c2330}
+    .wrap{max-width:var(--max);margin:0 auto;padding:24px 16px}
+    section{margin:26px 0;padding:22px;background:var(--panel);border:1px solid #232a33;border-radius:var(--r)}
+    h1,h2{margin:0 0 12px} h1{font-size:34px;line-height:1.15} h2{font-size:22px}
+    .muted{color:var(--muted)}
+    .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px} @media (max-width:860px){.cols{grid-template-columns:1fr}}
+    .item{padding:12px;border:1px dashed #2b3340;border-radius:14px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{padding:6px 10px;border:1px solid #2b3340;border-radius:999px;font-size:14px;background:#121720}
+    .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width:1000px){.proj-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.proj-grid{grid-template-columns:1fr}}
+    .card{padding:14px;border:1px solid #2b3340;border-radius:14px;background:#121720}
+    .card h3{margin:8px 0;font-size:18px}
+    footer{color:#9da8b7;text-align:center;padding:40px 0}
+    /* tiny niceties */
+    .lead{font-size:18px}
+    .btn{display:inline-block;padding:8px 12px;border-radius:10px;border:1px solid #2b3340;background:#121720}
+    .split{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    img.avatar{width:84px;height:84px;border-radius:50%;border:1px solid #2b3340}
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <div class="brand">Qianruixi Wang</div>
+    <a href="#intro">Intro</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section id="intro">
+    <div class="split">
+      <img class="avatar" src="assets/me.jpg" alt="Your photo" onerror="this.style.display='none'">
+      <div>
+        <h1>Hi, I'm Qianruixi.</h1>
+        <p class="lead">
+          I work on <b>LLM theory & model merging</b> and build <b>quant research</b> tools.  
+          Currently finishing my CS/Math at UMich and pursuing advanced work in representation learning.
+        </p>
+        <p class="muted">Ann Arbor, MI • <a href="https://github.com/qianruixiwang">GitHub</a> • <a href="mailto:you@email">you@email</a></p>
+        <a class="btn" href="assets/cv.pdf">Download CV</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="cols">
+      <div class="item">
+        <b>Quant Research Intern — CPIC Fund Management</b><br>
+        <span class="muted">Shanghai · 2024</span>
+        <ul>
+          <li>Built FinBERT-based <i>news sentiment → risk</i> pipeline with Ledoit–Wolf shrinkage.</li>
+          <li>Delivered dashboard + signals used in internal risk reviews.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <b>Research — Model Merging & Feature Drift</b><br>
+        <span class="muted">UMich · 2024–2025</span>
+        <ul>
+          <li>Proposed drift-controlled merge; +8% over baseline in experiments.</li>
+          <li>PEFT, Jacobian-nullspace constraints, layerwise α.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="item">
+      <b>University of Michigan</b> — B.S. Computer Science & Honors Math; M.S. CS (in progress)<br>
+      <span class="muted">Relevant: Statistical Computing, Parallel Programming, Time Series, Econometrics</span>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="chips">
+      <span class="chip">Python (PyTorch, NumPy, Pandas)</span>
+      <span class="chip">R (tidyverse)</span>
+      <span class="chip">C++ / OpenMP</span>
+      <span class="chip">Docker & Slurm</span>
+      <span class="chip">Time-Series & Bayesian</span>
+      <span class="chip">PEFT / LoRA</span>
+      <span class="chip">Model Merging</span>
+      <span class="chip">GitHub Actions</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="proj-grid">
+      <article class="card">
+        <h3>Latent Volatility Regime Detector</h3>
+        <p>Transformer embeddings + spectral clustering on VIX/VVIX; regime-aware signals.</p>
+        <p><a href="https://github.com/yourrepo">Code</a> · <a href="#">Notes</a></p>
+      </article>
+      <article class="card">
+        <h3>Feature-Drift Merge</h3>
+        <p>Training-free merge with drift control and layerwise α; strong multi-task accuracy.</p>
+        <p><a href="#">Paper draft</a></p>
+      </article>
+      <article class="card">
+        <h3>FinBERT Risk Pipeline</h3>
+        <p>Headline sentiment → shrinkage covariance → factor overlay for risk monitoring.</p>
+        <p><a href="https://github.com/yourrepo">Code</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:you@email">you@email</a> ·
+       GitHub: <a href="https://github.com/qianruixiwang">qianruixiwang</a> ·
+       LinkedIn: <a href="https://linkedin.com/in/yourhandle">/in/yourhandle</a></p>
+    <p class="muted">Feel free to reach out about research, internships, or collaborations.</p>
+  </section>
+</main>
+
+<footer>© <span id="y"></span> Qianruixi Wang · Hosted on GitHub Pages</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
