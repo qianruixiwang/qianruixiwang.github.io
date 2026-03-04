@@ -67,13 +67,24 @@
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 22px 22px;
+      padding: 28px 28px;
       box-shadow: 0 10px 30px rgba(15,23,42,.06);
+    }
+    .item-card ul{
+      margin-top: 10px;
+    }
+    .item-card li{
+      line-height: 1.65;
+      margin-bottom: 10px; 
     }
     /* Space between cards */
     .item-stack{
       display: grid;
       gap: 18px;
+    }
+    .narrow-cards{
+      max-width: 900px;
+      margin: 0 auto;
     }
     /* PLAIN section */
     .section-plain{
@@ -278,7 +289,7 @@
 
         <!-- Professional Experience -->
         <div class="subsection-title">Professional Experience</div>
-        <div class="item-stack">
+        <div class="item-stack narrow-cards">
 
           <!-- Experience Card 1 -->
           <div class="item-card">
@@ -319,10 +330,11 @@
               </div>
             </div>
           </div>
+        </div>
         
         <!-- Academic Experience -->
         <div class="subsection-title">Academic Experience</div>
-        <div class="item-stack">
+        <div class="item-stack narrow-cards">
 
           <!-- Experience Card 1 -->
           <div class="item-card">
@@ -382,7 +394,7 @@
               </div>
             </div>
           </div>
-
+          
         </div>
       </div>
     </div>
@@ -454,6 +466,7 @@
     <div class="container">
 
       <h2 class="mb-4">Skills</h2>
+      <div class="narrow-cards">
 
       <div class="section-card mb-4">
         <div class="skill-grid">
@@ -510,6 +523,7 @@
             <img src="assets/docker.png">
           </div>
 
+        </div>
         </div>
       </div>
     </div>
