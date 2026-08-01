@@ -4,7 +4,8 @@
   <!-- Meta -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Qianruixi Wang — Applied Data Science | Machine Learning | Risk Modeling" />
+  <meta name="description" content="Qianruixi Wang (Erica), a CMU Applied Data Science graduate building machine learning, risk modeling, and analytics systems." />
+  <meta name="theme-color" content="#f4f1ea" />
   <meta name="keywords" content="Qianruixi Wang, Qianruixi, machine learning, data science" />
   <title>Qianruixi Wang</title>
 
@@ -17,22 +18,25 @@
   <!-- Styles -->
   <style>
     :root{
-      --bg:#f8fafc;
+      --bg:#f4f1ea;
       --panel:#ffffff;
-      --ink:#0b1220;
-      --muted:#5b6472;
-      --line:#e5e7eb;
-      --accent:#2563eb; 
-      --title:#60a5fa;
-      --shadow: 0 10px 30px rgba(15,23,42,.06);
+      --ink:#18201d;
+      --muted:#68716d;
+      --line:#dcded8;
+      --accent:#0f766e;
+      --accent-dark:#115e59;
+      --warm:#d97757;
+      --title:#163d38;
+      --shadow: 0 18px 50px rgba(24,32,29,.08);
     }
 
     html { scroll-behavior: smooth; }
     body {
       font-family: "Inter", system-ui, sans-serif;
-      font-weight: 300;
+      font-weight: 400;
       background: var(--bg);
       color: var(--ink);
+      line-height: 1.7;
     }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
@@ -40,25 +44,26 @@
     /* Navbar */
     .navbar {
       backdrop-filter: saturate(180%) blur(8px);
-      background: rgba(255,255,255,.9)!important;
+      background: rgba(244,241,234,.9)!important;
       border-bottom: 1px solid var(--line);
     }
     .navbar .navbar-brand { color: var(--ink); }
     .navbar .nav-link { color: var(--ink) !important; opacity: .85; }
-    .navbar .nav-link:hover { opacity: 1; }
+    .navbar .nav-link { font-size:.9rem; font-weight:500; }
+    .navbar .nav-link:hover { opacity: 1; text-decoration:none; color:var(--accent)!important; }
     .navbar .nav-link.active { color: var(--accent) !important; opacity: 1; }
 
     /* Sections */
-    section { padding: 72px 0; }
+    section { padding: 88px 0; }
     .section-band{
-      background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+      background: transparent;
     }
 
     /* FRAMED sections*/
     .section-card {
       background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: 18px;
+      border-radius: 22px;
       padding: 24px;
       box-shadow: var(--shadow);
     }
@@ -66,10 +71,12 @@
     .item-card{
       background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: 18px;
+      border-radius: 22px;
       padding: 28px 28px;
-      box-shadow: 0 10px 30px rgba(15,23,42,.06);
+      box-shadow: var(--shadow);
+      transition: transform .2s ease, box-shadow .2s ease;
     }
+    .item-card:hover{ transform:translateY(-3px); box-shadow:0 24px 60px rgba(24,32,29,.11); }
     .item-card ul{
       margin-top: 10px;
     }
@@ -97,7 +104,7 @@
     .subsection-title{
       font-size: 1.25rem;
       font-weight: 600;
-      color: #6b7280;
+      color: var(--muted);
       margin-top: 28px;
       margin-bottom: 14px;
     }
@@ -105,18 +112,19 @@
     .skill-grid{
       display:grid;
       grid-template-columns: repeat(5, 1fr);
-      gap:40px;
+      gap:28px 20px;
       align-items: center;
       margin-top:20px;
     }
     /* Each skill item */
-    .skill-item{ text-align:center; }
+    .skill-item{ text-align:center; color:var(--muted); font-size:.8rem; font-weight:600; }
     /* Icon */
     .skill-item img{
-      width:100px;
-      height:100px;
+      width:64px;
+      height:64px;
       object-fit:contain;
-      margin-bottom:10px;
+      margin-bottom:8px;
+      filter:saturate(.82);
     }
 
     .project-grid > [class*="col-"]{
@@ -127,17 +135,20 @@
     }
 
     /* Headings color */
-    h2 { color: var(--title); font-weight: 800; letter-spacing: -0.02em; }
+    h2 { color: var(--title); font-weight: 700; letter-spacing: -0.035em; font-size:clamp(2rem,4vw,3rem); }
     h1 { letter-spacing: -0.03em; }
 
     /* Hero */
-    .hero { padding-top: 96px; }
-    .hero h1 span { color: var(--title); }
+    .hero { padding-top: 96px; min-height:90vh; display:flex; align-items:center; position:relative; overflow:hidden; }
+    .hero::before{ content:""; position:absolute; width:560px; height:560px; right:-180px; top:40px; border-radius:50%; background:radial-gradient(circle,rgba(15,118,110,.16),transparent 68%); pointer-events:none; }
+    .hero h1 { color:var(--title); font-size:clamp(2.7rem,6vw,5.4rem); line-height:.98; max-width:800px; }
+    .eyebrow{ color:var(--accent); font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.16em; }
+    .hero-copy{ color:var(--muted); font-size:1.08rem; max-width:650px; }
     .avatar {
       width:240px;
       height:240px;
       object-fit:cover;
-      border-radius:18px;
+      border-radius:28px;
       border:1px solid var(--line);
       /* shadow */
       box-shadow:0 20px 45px rgba(15,23,42,.15);
@@ -189,14 +200,32 @@
     }
     .icon-links i{ 
       font-size: 28px;
-      color: #6b7280
+      color: var(--accent)
     }
+    .btn-primary{ background:var(--accent); border-color:var(--accent); border-radius:999px; padding:.72rem 1.15rem; font-weight:600; }
+    .btn-primary:hover{ background:var(--accent-dark); border-color:var(--accent-dark); }
+    .btn-outline-dark{ border-radius:999px; padding:.72rem 1.15rem; font-weight:600; }
+    .section-kicker{ color:var(--warm); font-size:.75rem; text-transform:uppercase; letter-spacing:.15em; font-weight:700; margin-bottom:.4rem; }
+    .section-intro{ max-width:680px; color:var(--muted); margin-bottom:2rem; }
+    .role-meta{ color:var(--accent); font-weight:600; font-size:.86rem; }
+    .project-link{ display:inline-flex; align-items:center; gap:.4rem; font-weight:600; font-size:.88rem; }
 
     /* Footer */
     footer { background: transparent; border-top: 1px solid var(--line); color: var(--muted); }
 
     /* Anchor offset for sticky navbar */
     .anchor-offset { position: relative; top: -80px; display: block; height: 0; overflow: hidden; }
+    :focus-visible{ outline:3px solid rgba(15,118,110,.35); outline-offset:3px; border-radius:4px; }
+    @media (max-width: 767.98px){
+      section{ padding:64px 0; }
+      .hero{ min-height:auto; padding-top:82px; }
+      .hero h1{ font-size:2.8rem; }
+      .avatar{ width:180px; height:180px; }
+      .skill-grid{ grid-template-columns:repeat(3,1fr); gap:24px 12px; }
+      .item-card{ padding:22px 18px; }
+      .item-card > .d-flex{ flex-direction:column; }
+    }
+    @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{transition:none!important} }
   </style>
 </head>
 
@@ -205,7 +234,7 @@
   <!-- Navbar -->
   <nav id="topnav" class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Qianruixi Wang</a>
+      <a class="navbar-brand fw-bold" href="#" aria-label="Qianruixi Wang, home">QW<span style="color:var(--warm)">.</span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -227,30 +256,33 @@
     <section class="py-5">
       <div class="container">
 
-        <div class="row align-items-center g-4">
+        <div class="row align-items-center g-5">
           <!-- Photo -->
-          <div class="col-md-5 text-center text-md-start">
+          <div class="col-md-4 text-center text-md-start order-md-2">
             <div class="avatar-stack">
               <img class="avatar d-none d-md-block" src="assets/pfp.JPG" alt="Portrait of Qianruixi" onerror="this.style.display='none'">
             </div>
           </div>
           
           <!-- Text -->
-          <div class="col-md-7 text-center text-md-start">
-            <h1 class="fw-bold mb-2"><span>Hey, I'm Qianruixi (Erica)</span></h1>
-            <p class="mb-3">
-              I am a Master's student in Applied Data Science at Carnegie Mellon University, specializing in machine learning and data-driven solutions.
-            </p>
+          <div class="col-md-8 text-center text-md-start order-md-1">
+            <div class="eyebrow mb-3">Applied data scientist · Open to work</div>
+            <h1 class="fw-bold mb-4">Hey, I'm Qianruixi (Erica).</h1>
+            <p class="hero-copy mb-4">I'm a recent Applied Data Science master's graduate from Carnegie Mellon University. I build machine learning, risk, and analytics systems that make messy problems measurable. I'm actively seeking opportunities where I can put that work into practice.</p>
+            <div class="d-flex gap-2 flex-wrap justify-content-center justify-content-md-start mb-4">
+              <a class="btn btn-primary" href="#projects">Explore my work <i class="bi bi-arrow-down-right ms-1"></i></a>
+              <a class="btn btn-outline-dark" href="mailto:wqianruixi@gmail.com">Let's connect</a>
+            </div>
 
             <!-- icon-only links -->
             <div class="icon-links d-flex gap-2 flex-wrap">
-              <a href="https://github.com/qianruixiwang" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-title="GitHub">
+              <a href="https://github.com/qianruixiwang" target="_blank" rel="noopener" aria-label="GitHub profile" data-bs-toggle="tooltip" data-bs-title="GitHub">
                 <i class="bi bi-github"></i>
               </a>
-              <a href="https://www.linkedin.com/in/qianruixi-wang/" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-title="LinkedIn">
+              <a href="https://www.linkedin.com/in/qianruixi-wang/" target="_blank" rel="noopener" aria-label="LinkedIn profile" data-bs-toggle="tooltip" data-bs-title="LinkedIn">
                 <i class="bi bi-linkedin"></i>
               </a>
-              <a href="mailto:qianruiw@andrew.cmu.edu" data-bs-toggle="tooltip" data-bs-title="Email">
+              <a href="mailto:wqianruixi@gmail.com" aria-label="Email Qianruixi" data-bs-toggle="tooltip" data-bs-title="Email">
                 <i class="bi bi-envelope"></i>
               </a>
             </div>
@@ -265,9 +297,10 @@
   <section class="section-band">
     <div class="container">
       <div class="section-plain">
-        <h2 class="mb-3">About</h2>
+        <div class="section-kicker">A little context</div>
+        <h2 class="mb-4">Curious by nature, rigorous by training.</h2>
         <p>
-            I am currently pursuing a Master's degree in Applied Data Science at Carnegie Mellon University, where I'm building deeper experience in machine learning, time series modeling, and experimental design through coursework and projects. Before that, I earned my bachelor's degree from the University of Michigan with double majors in Mathematics and Statistics.
+            I recently earned my Master's degree in Applied Data Science from Carnegie Mellon University, where I deepened my experience in machine learning, time series modeling, and experimental design through coursework and projects. Before that, I earned my bachelor's degree from the University of Michigan with double majors in Mathematics and Statistics.
         </p>
         <p>
             My interests lie in building data-driven solutions that transform complex datasets into actionable insights and scalable decision systems. I enjoy applying analytics, statistics, and machine learning to real-world problems.
@@ -285,7 +318,9 @@
   <section class="section-band">
     <div class="container">
       <div class="section-plain">
-        <h2 class="mb-4">Experience</h2>
+        <div class="section-kicker">Where I've contributed</div>
+        <h2 class="mb-2">Experience</h2>
+        <p class="section-intro">Work spanning financial risk, product analytics, teaching, and mathematical research.</p>
 
         <!-- Professional Experience -->
         <div class="subsection-title">Professional Experience</div>
@@ -300,7 +335,7 @@
                   <h5 class="mb-0">Bank of Nanjing Co., Ltd.</h5>
                   <span class="muted">June - July 2025</span>
                 </div>
-                <div class="muted small mb-2">Data Analyst Intern</div>
+                <div class="role-meta mb-2">Data Analyst Intern</div>
                 <ul class="mb-0">
                   <li>Designed KPI monitoring frameworks for 20+ digital banking products in SQL using window functions and dynamic partitioning, enabling product managers to evaluate marketing and UX experiments in real time.</li>
                   <li>Optimized SQL query performance through script refactoring and Redis caching, reducing average query latency by 30% and supporting faster decision-making in fraud detection and risk monitoring workflows.</li>
@@ -320,7 +355,7 @@
                   <h5 class="mb-0">Nanjing Securities Co.</h5>
                   <span class="muted">May - August 2023</span>
                 </div>
-                <div class="muted small mb-2">Data Analyst Intern</div>
+                <div class="role-meta mb-2">Data Analyst Intern</div>
                 <ul class="mb-0">
                   <li>Processed and merged 50M+ tick-level trading records with real-time news sentiment data using Python, reducing preprocessing time by 30% and enhancing downstream financial modeling workflows.</li>
                   <li>Built scenario-based ARIMA forecasting models and conducted sensitivity analysis to predict multi-case outcomes and support portfolio managers in data-driven investment decision-making.</li>
@@ -343,9 +378,9 @@
               <div class="flex-grow-1">
                 <div class="d-flex align-items-baseline flex-wrap justify-content-between gap-2">
                   <h5 class="mb-0">Carnegie Mellon University</h5>
-                  <span class="muted">August 2025 - Present</span>
+                  <span class="muted">August 2025 - May 2026</span>
                 </div>
-                <div class="muted small mb-2">Teaching Assistant</div>
+                <div class="role-meta mb-2">Teaching Assistant</div>
                 <ul class="mb-0">
                   <li>Led weekly labs and held office hours to reinforce core statistical concepts and provide individualized support to both technical and non-technical learners</li>
                   <li>Graded assignments and delivered detailed feedback to strengthen students' statistical reasoning and data literacy</li>
@@ -361,13 +396,15 @@
               <img src="assets/umicon.png" alt="" style="width:56px;height:56px;object-fit:cover;border-radius:12px;border:1px solid var(--line)">
               <div class="flex-grow-1">
                 <div class="d-flex align-items-baseline flex-wrap justify-content-between gap-2">
-                  <h5 class="mb-0">University of Michigan</h5>
+                  <h5 class="mb-0">University of Michigan <span class="muted fw-normal">· Ann Arbor, MI</span></h5>
                   <span class="muted">June - December 2024</span>
                 </div>
-                <div class="muted small mb-2">Research Assistant</div>
+                <div class="role-meta mb-2">Machine Learning Researcher</div>
                 <ul class="mb-0">
-                  <li>Investigated a novel batch learning paradigm grounded in set learning principles, established necessary and sufficient conditions for learning with k-insensitive loss functions, and formulated both theoretical proofs and empirical validation strategies to advance the theoretical basis of robust learning.</li>
-                  <li>Built empirical validation pipelines in PyTorch and TensorFlow, running controlled experiments across synthetic datasets to analyze learning dynamics and generalization.</li>
+                  <li>Designed a set-learning optimization framework under k-insensitive loss to improve convergence in non-smooth classification.</li>
+                  <li>Derived theoretical connections between 0–1 loss learnability and k-insensitive loss, tightening generalization bounds and improving robustness for classification with noisy labels and class imbalance.</li>
+                  <li>Built experimental validation pipelines in PyTorch and TensorFlow, generating 50K+ synthetic samples using GPT-4-assisted data generation and labeling to simulate noisy classification environments for controlled robustness experiments.</li>
+                  <li>Benchmarked optimization behavior against standard loss functions, demonstrating around 10% faster convergence in non-smooth training settings while reducing misclassification error by 8% on imbalanced test sets.</li>
                 </ul>
               </div>
             </div>
@@ -382,9 +419,9 @@
                   <h5 class="mb-0">University of Wisconsin - Madison</h5>
                   <span class="muted">September - December 2022</span>
                 </div>
-                <div class="muted small mb-2">
+                <div class="role-meta mb-2">
                     Research Assistant | 
-                  <a href="https://arxiv.org/abs/2406.18774" target="_blank"><i class="bi bi-file-earmark-text"></i> Paper</a>
+                  <a href="https://arxiv.org/abs/2406.18774" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text"></i> Paper</a>
                 </div>
                 <ul class="mb-0">
                   <li>Conducted research on finite-state machines and intrinsic metrics within horospheres of hyperbolic right-angled Coxeter groups.</li>
@@ -404,53 +441,86 @@
   <span id="projects" class="anchor-offset"></span>
   <section class="section-band">
     <div class="container">
-      <h2 class="mb-4">Projects</h2>
+      <div class="section-kicker">Selected work</div>
+      <h2 class="mb-2">Projects</h2>
+      <p class="section-intro">A selection of data products and analyses built from raw data through decision-ready output.</p>
 
-      <!-- Project 1 -->
+      <!-- MSA Safety Capstone -->
       <div class="row justify-content-center mb-4">
         <div class="col-lg-8">
           <div class="item-card">
-            <h5 class="mb-1">MSA Safety - Grid Heatmap Project</h5>
-            <div class="muted small mb-2">Python, Snowflake, Pandas, Folium</div>
+            <div class="d-flex align-items-baseline flex-wrap justify-content-between gap-2 mb-1">
+              <h5 class="mb-0">MSA Safety <span class="muted fw-normal">· Pittsburgh, PA</span></h5>
+              <span class="muted">January - May 2026</span>
+            </div>
+            <div class="role-meta mb-1">Data Engineer (Capstone Project)</div>
+            <div class="muted small mb-3">H3 · Folium · JavaScript · Snowflake · Git</div>
             <ul class="mb-0">
-              <li>Developed a grid-based spatial heatmap system to visualize worker safety risk patterns across industrial sites, enabling supervisors to identify high-risk zones from historical alarm and sensor data.</li>
-              <li>Designed data validation pipelines to detect missing GPS coordinates, abnormal session durations, and inconsistent event timestamps, improving reliability of downstream spatial analysis.</li>
-              <li>Performed exploratory data analysis on large-scale sensor datasets, identifying gaps in location tracking and quantifying spatial sparsity that affects heatmap accuracy.</li>
-              <li>Built interactive geographic visualizations using Folium and Python, mapping alarms and gas readings to support safety monitoring and operational decision-making.</li>
+              <li>Built an interactive geospatial analytics platform using H3, Folium, JavaScript, and Snowflake to visualize alarm intensity, exposure density, location coverage, and operational risk across 25K+ industrial safety sessions with GPS telemetry.</li>
+              <li>Designed and optimized data aggregation pipelines processing GPS streams, alarm events, and session metadata into scalable geospatial risk metrics, reducing manual analysis time by 20% and improving data accessibility for stakeholders.</li>
+              <li>Engineered spatial-temporal workflows for alarm-to-location matching, clustering, and hotspot detection, enabling historical analysis of gas exposure trends and high-risk operational regions for proactive safety monitoring.</li>
+              <li>Queried and transformed 200K+ sensor records in Snowflake and managed development using Git for version control.</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <div class="row g-4 project-grid">
+      <!-- Flight Delay Prediction -->
+      <div class="row justify-content-center mb-4">
+        <div class="col-lg-8">
+          <div class="item-card">
+            <div class="d-flex align-items-baseline flex-wrap justify-content-between gap-2 mb-1">
+              <h5 class="mb-0">Flight Delay Prediction</h5>
+              <span class="muted">Spring 2026</span>
+            </div>
+            <div class="muted small mb-3">PySpark · Databricks · Spark MLlib</div>
+            <ul class="mb-0">
+              <li>Built an end-to-end flight delay prediction pipeline using PySpark and Databricks, processing 10M+ flight records and transforming raw airline, weather, and operational data into machine learning-ready features.</li>
+              <li>Engineered 10+ temporal and airport-level features—including previous-hour delay rates, weather delay rates, airport congestion metrics, and carrier-specific historical performance—using Spark window functions.</li>
+              <li>Developed and optimized a distributed Logistic Regression model with cross-validation in Spark MLlib, achieving 67% accuracy and 30% recall and outperforming a baseline model by 4 percentage points.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 project-grid justify-content-center">
         <!-- Project 2 -->
-        <div class="col-md-6">
+        <div class="col-lg-8">
           <div class="item-card">
             
             <div class="d-flex justify-content-between align-items-start mb-1">
               <h5 class="mb-0">HHS & CMS Data Pipeline</h5>
-              <a href="https://github.com/qianruixiwang/prancer" target="_blank" rel="noopener">
-                <i class="bi bi-github" style="font-size:20px;color:#6b7280;"></i>
-              </a>
+              <div class="d-flex align-items-center gap-3">
+                <span class="muted">Fall 2025</span>
+                <a href="https://github.com/qianruixiwang/prancer" target="_blank" rel="noopener" aria-label="View HHS and CMS Data Pipeline on GitHub">
+                  <i class="bi bi-github" style="font-size:20px;color:#6b7280;"></i>
+                </a>
+              </div>
             </div>
             
-            <div class="muted small mb-2">SQL, Streamlit, Pandas</div>
+            <div class="muted small mb-3">SQL · Python · PostgreSQL · Pandas</div>
             <ul class="mb-0">
-              <li>Designed and implemented PostgreSQL schema for an ETL pipeline combining weekly HHS hospital datasets with CMS hospital quality data.</li>
-              <li>Modeled time-versioned hospital quality ratings to enable historical comparisons across different reporting periods.</li>
-              <li>Delivered end-to-end knowledge transfer through documentation, technical walkthroughs, and presentations to enable continued development.</li>
+              <li>Designed and implemented a SQL schema for an ETL pipeline integrating weekly HHS hospital utilization data with CMS quality ratings for 5,000+ Medicare-certified hospitals nationwide.</li>
+              <li>Modeled time-versioned hospital quality ratings across historical CMS reporting snapshots to enable longitudinal comparisons.</li>
+              <li>Developed Python-based data validation and transformation workflows, reducing schema mismatch errors by 35% and improving pipeline reliability across disparate HHS and CMS data sources.</li>
+              <li>Delivered end-to-end knowledge transfer through written documentation, technical walkthroughs, and a PowerPoint presentation to non-technical stakeholders, enabling seamless handoff and continued development.</li>
             </ul>
           </div>
         </div>
 
         <!-- Project 3 -->
-        <div class="col-md-6">
+        <div class="col-lg-8">
           <div class="item-card">
-            <h5 class="mb-1">HIV Treatment Analysis</h5>
-            <div class="muted small mb-2">R, ggplot2</div>
+            <div class="d-flex align-items-baseline flex-wrap justify-content-between gap-2 mb-1">
+              <h5 class="mb-0">HIV Treatment Analysis</h5>
+              <span class="muted">Fall 2025</span>
+            </div>
+            <div class="muted small mb-3">R · ggplot2</div>
             <ul class="mb-0">
               <li>Analyzed randomized clinical trial data to evaluate how baseline disease stage, prior HIV drug exposure, and treatment regimen influence short- and long-term outcomes.</li>
-              <li>Built and compared multivariable linear regression models, using partial F-tests and diagnostic checks to assess treatment heterogeneity and model validity.</li>
+              <li>Built and compared multivariable linear regression models to quantify treatment effects while controlling for patient covariates.</li>
+              <li>Performed partial F-tests, residual analysis, and diagnostic checks to assess treatment heterogeneity and ensure model validity.</li>
+              <li>Identified three key factors—baseline disease stage, prior drug exposure, and treatment regimen—associated with a 28% difference in treatment effectiveness across patient subgroups; presented findings to course stakeholders through a report and slide deck.</li>
             </ul>
           </div>
         </div>
@@ -465,62 +535,63 @@
   <section class="section-band">
     <div class="container">
 
-      <h2 class="mb-4">Skills</h2>
+      <div class="section-kicker">Tools I use</div>
+      <h2 class="mb-4">Technical toolkit</h2>
       <div class="narrow-cards">
 
       <div class="section-card mb-4">
         <div class="skill-grid">
 
           <div class="skill-item">
-            <img src="assets/python.png">
+            <img src="assets/python.png" alt="Python"><div>Python</div>
           </div>
 
           <div class="skill-item">
-            <img src="assets/cpp.png">
+            <img src="assets/cpp.png" alt="C++"><div>C++</div>
           </div>
 
           <div class="skill-item">
-            <img src="assets/rstudio.png">
+            <img src="assets/rstudio.png" alt="R"><div>R</div>
           </div>
 
           <div class="skill-item">
-            <img src="assets/postgresql.png">
+            <img src="assets/postgresql.png" alt="PostgreSQL"><div>PostgreSQL</div>
           </div>
 
           <div class="skill-item">
-            <img src="assets/mysql.png">
+            <img src="assets/mysql.png" alt="MySQL"><div>MySQL</div>
           </div>
 
           <div class="skill-item">
-            <img src="assets/numpy.png">
+            <img src="assets/numpy.png" alt="NumPy"><div>NumPy</div>
           </div>
 
           <div class="skill-item">
-            <img src="assets/pandas.png">
+            <img src="assets/pandas.png" alt="Pandas"><div>Pandas</div>
           </div>
 
           <div class="skill-item">
-            <img src="assets/pytorch.png">
+            <img src="assets/pytorch.png" alt="PyTorch"><div>PyTorch</div>
           </div>
 
           <div class="skill-item">
-            <img src="assets/tensorflow.png">
+            <img src="assets/tensorflow.png" alt="TensorFlow"><div>TensorFlow</div>
           </div>
 
           <div class="skill-item">
-            <img src="assets/pyspark.png">
+            <img src="assets/pyspark.png" alt="PySpark"><div>PySpark</div>
           </div>
 
           <div class="skill-item">
-            <img src="assets/databricks.png">
+            <img src="assets/databricks.png" alt="Databricks"><div>Databricks</div>
           </div>
 
           <div class="skill-item">
-            <img src="assets/snowflake.png">
+            <img src="assets/snowflake.png" alt="Snowflake"><div>Snowflake</div>
           </div>
 
           <div class="skill-item">
-            <img src="assets/docker.png">
+            <img src="assets/docker.png" alt="Docker"><div>Docker</div>
           </div>
 
         </div>
@@ -534,7 +605,8 @@
   <section class="pb-5">
     <div class="container">
       <div>
-        <h2 class="mb-3">Contact</h2>
+        <div class="section-kicker">Say hello</div>
+        <h2 class="mb-3">Let's build something useful.</h2>
 
         <p class="muted mb-4">
         I'm always happy to connect and discuss data science, machine learning, research opportunities, or potential collaborations. Feel free to reach out through any of the channels below.
@@ -542,17 +614,17 @@
 
         <p class="mb-2">
           <i class="bi bi-envelope me-2"></i>
-          qianruiw@andrew.cmu.edu
+          <a href="mailto:wqianruixi@gmail.com">wqianruixi@gmail.com</a>
         </p>
 
         <p class="mb-2">
           <i class="bi bi-github me-2"></i>
-          github.com/qianruixiwang
+          <a href="https://github.com/qianruixiwang" target="_blank" rel="noopener">github.com/qianruixiwang</a>
         </p>
 
         <p class="mb-0">
           <i class="bi bi-linkedin me-2"></i>
-          linkedin.com/in/qianruixi-wang
+          <a href="https://www.linkedin.com/in/qianruixi-wang/" target="_blank" rel="noopener">linkedin.com/in/qianruixi-wang</a>
         </p>
 
       </div>
