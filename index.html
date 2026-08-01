@@ -140,6 +140,8 @@
 
     /* Hero */
     .hero { padding-top: 96px; min-height:90vh; display:flex; align-items:center; position:relative; overflow:hidden; }
+    .hero > section{ width:100%; }
+    .hero .container{ max-width:1120px; }
     .hero::before{ content:""; position:absolute; width:560px; height:560px; right:-180px; top:40px; border-radius:50%; background:radial-gradient(circle,rgba(15,118,110,.16),transparent 68%); pointer-events:none; }
     .hero h1 { color:var(--title); font-size:clamp(2.7rem,6vw,5.4rem); line-height:.98; max-width:800px; }
     .eyebrow{ color:var(--accent); font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.16em; }
